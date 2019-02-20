@@ -6,8 +6,8 @@
 package calculadora;
 
 /**
- *
- * @author sebas
+ * Clase Main de la Calculadora.
+ * @author Sebastian Zarate, Rodrigo Gonzalez, Maria Jose Domenzain, Montserrat Olivares
  */
 public class Calculadora {
 
@@ -16,6 +16,7 @@ public class Calculadora {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        InterfazCalculadora.main(args);
     }
     
 }

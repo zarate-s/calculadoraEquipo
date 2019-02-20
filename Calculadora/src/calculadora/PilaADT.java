@@ -5,13 +5,15 @@
  */
 package calculadora;
 
+
+
 /**
- *
- * @author edi
+ * Interface que representa la estructura algoritmica abstracta de Pila.
+ * @author Sebastian Zarate, Rodrigo Gonzalez, Maria Jose Domenzain, Montserrat Olivares
  */
 public interface PilaADT<T> {
-  abstract public void push(T dato);
-  abstract public T pop() throws EmptyCollectionException;
-  abstract public T peek() throws EmptyCollectionException;
-  abstract public boolean isEmpty();
+    public void push(T dato);
+    public T pop();
+    public T peek();
+    public boolean isEmpty();
 }
