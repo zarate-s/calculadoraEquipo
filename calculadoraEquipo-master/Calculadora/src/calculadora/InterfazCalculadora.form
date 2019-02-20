@@ -59,7 +59,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="cuatro" alignment="1" max="32767" attributes="0"/>
                               <Component id="uno" alignment="1" max="32767" attributes="0"/>
-                              <Component id="cambSigno" alignment="1" max="32767" attributes="0"/>
+                              <Component id="negativo" alignment="1" max="32767" attributes="0"/>
                               <Component id="siete" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -108,7 +108,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="borrar" max="32767" attributes="0"/>
+                                      <Component id="cambiarSigno" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="parIzq" min="-2" pref="115" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -116,9 +116,9 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="limpiar" min="-2" pref="115" max="-2" attributes="0"/>
+                                          <Component id="borrar" min="-2" pref="115" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="limpiar1" max="32767" attributes="0"/>
+                                          <Component id="limpiar" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -144,7 +144,7 @@
                       <Component id="ocho" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="nueve" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="suma" alignment="3" min="-2" pref="102" max="-2" attributes="0"/>
-                      <Component id="borrar" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="cambiarSigno" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -162,16 +162,16 @@
                       <Component id="uno" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="dos" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tres" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="limpiar" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="borrar" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
                       <Component id="mult" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="limpiar1" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="limpiar" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cero" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="punto" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="div" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="cambSigno" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="negativo" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="igual" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -227,7 +227,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ochoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="borrar">
+        <Component class="javax.swing.JButton" name="cambiarSigno">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="36" style="0"/>
@@ -235,7 +235,7 @@
             <Property name="text" type="java.lang.String" value="+/-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="borrarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cambiarSignoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="suma">
@@ -382,7 +382,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="limpiar">
+        <Component class="javax.swing.JButton" name="borrar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="36" style="0"/>
@@ -390,10 +390,10 @@
             <Property name="text" type="java.lang.String" value="C"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="borrarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="cambSigno">
+        <Component class="javax.swing.JButton" name="negativo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="36" style="0"/>
@@ -401,7 +401,7 @@
             <Property name="text" type="java.lang.String" value="(-)"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cambSignoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="negativoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="cero">
@@ -454,7 +454,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="igualActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="limpiar1">
+        <Component class="javax.swing.JButton" name="limpiar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="36" style="0"/>
@@ -462,7 +462,7 @@
             <Property name="text" type="java.lang.String" value="AC"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiar1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

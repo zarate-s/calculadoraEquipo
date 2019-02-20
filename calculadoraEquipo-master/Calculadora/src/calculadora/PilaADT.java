@@ -17,7 +17,7 @@ public interface PilaADT<T> {
 public T pop();
 public T peek();
 public boolean isEmpty();
-public void multiPop(int n);
+//public void multiPop(int n);
             
     
 }

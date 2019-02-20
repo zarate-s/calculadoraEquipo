@@ -11,20 +11,21 @@ package calculadora;
  */
 public class Pila <T> implements PilaADT <T>{
     private T[] pila;
-private int tope;
-private final int MAX=20;
+    private int tope;
+    private final int MAX=20;
 
-public Pila(){
-pila=(T[])new Object[MAX];
-tope=-1;
-}
+    public Pila(){
+        pila=(T[])new Object[MAX];
+        tope=-1;
+    }
     private void expande(){
     T[] nuevo=(T[])new Object[pila.length*2];
     for(int i=0;i<=tope;i++)
         nuevo[i]=pila[i];
     pila=nuevo;
     }
-    public void multiPop(int n){
+    
+    /*public void multiPop(int n){
         if(isEmpty()){
             throw new EmptyCollectionException();
         }
@@ -46,13 +47,12 @@ tope=-1;
         pila[tope]=null;
         }
         }
-    }
+    }*/
 
     @Override
     public void push(T dato) {
         if(tope+1==pila.length)
             expande();
-            
         tope++;
         pila[tope]=dato;
         
@@ -74,9 +74,8 @@ tope=-1;
 
     @Override
     public T peek() {
-
         if(isEmpty())
-        throw new EmptyCollectionException();    
+            throw new EmptyCollectionException();    
         return pila[tope];
     }
 

@@ -23,12 +23,12 @@ public class Metodos {
     
     private static String aPostFija (String infija) {
         StringBuilder postfija;
-        Pila<String> pila;
+        PilaADT<String> pila;
         Scanner scan;
         String token;
-        int prioridad, i = 0;
+        int prioridad;
         
-        pila = new Pila<String>();
+        pila = new Pila<>();
         postfija = new StringBuilder();
         scan = new Scanner(infija);
         
@@ -37,28 +37,24 @@ public class Metodos {
             prioridad = prioridadOperador(token);
             
             switch (prioridad) {
-                case 0: postfija.append(token+" "); //un numero
+                case 0: postfija.append(token+" "); //es numero
                         break;
+                        
                 case 1: pila.push(token); //parentesis abre
                         break;
-                case 2: while(!pila.isEmpty() && prioridadOperador((String) pila.peek()) != 1) {
-                            System.out.println(prioridadOperador((String) pila.peek()) != 1);
+                        
+                case 2: while(!pila.isEmpty() && prioridadOperador((String) pila.peek()) != 1) //parentesis cierra
                             postfija.append(pila.pop()+" ");
-                            System.out.println(prioridadOperador((String) pila.peek()));
-                        }//parentesis cierra
-                        System.out.println(i);
-                        i++;
                         pila.pop();
                         break;
-                default:while(!pila.isEmpty() && prioridad <= prioridadOperador((String) pila.peek())) {
+                default:while(!pila.isEmpty() && prioridad <= prioridadOperador((String) pila.peek()))//es operador
                             postfija.append(pila.pop() +" ");
-                            System.out.println(prioridadOperador((String) pila.peek()));
-                        }//es operador
                         pila.push(token);
+                        
             }
-            while(!pila.isEmpty())
-                postfija.append(pila.pop()+" ");
         }
+        while(!pila.isEmpty())
+            postfija.append(pila.pop()+" ");
         System.out.println("Postfija: "+postfija.toString());
         return postfija.toString();
     }

@@ -42,7 +42,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         res = new javax.swing.JTextPane();
         siete = new javax.swing.JButton();
         ocho = new javax.swing.JButton();
-        borrar = new javax.swing.JButton();
+        cambiarSigno = new javax.swing.JButton();
         suma = new javax.swing.JButton();
         nueve = new javax.swing.JButton();
         cuatro = new javax.swing.JButton();
@@ -55,13 +55,13 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         dos = new javax.swing.JButton();
         tres = new javax.swing.JButton();
         mult = new javax.swing.JButton();
-        limpiar = new javax.swing.JButton();
-        cambSigno = new javax.swing.JButton();
+        borrar = new javax.swing.JButton();
+        negativo = new javax.swing.JButton();
         cero = new javax.swing.JButton();
         punto = new javax.swing.JButton();
         div = new javax.swing.JButton();
         igual = new javax.swing.JButton();
-        limpiar1 = new javax.swing.JButton();
+        limpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -92,11 +92,11 @@ public class InterfazCalculadora extends javax.swing.JFrame {
             }
         });
 
-        borrar.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        borrar.setText("+/-");
-        borrar.addActionListener(new java.awt.event.ActionListener() {
+        cambiarSigno.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        cambiarSigno.setText("+/-");
+        cambiarSigno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                borrarActionPerformed(evt);
+                cambiarSignoActionPerformed(evt);
             }
         });
 
@@ -200,19 +200,19 @@ public class InterfazCalculadora extends javax.swing.JFrame {
             }
         });
 
-        limpiar.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        limpiar.setText("C");
-        limpiar.addActionListener(new java.awt.event.ActionListener() {
+        borrar.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        borrar.setText("C");
+        borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limpiarActionPerformed(evt);
+                borrarActionPerformed(evt);
             }
         });
 
-        cambSigno.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        cambSigno.setText("(-)");
-        cambSigno.addActionListener(new java.awt.event.ActionListener() {
+        negativo.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        negativo.setText("(-)");
+        negativo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cambSignoActionPerformed(evt);
+                negativoActionPerformed(evt);
             }
         });
 
@@ -250,11 +250,11 @@ public class InterfazCalculadora extends javax.swing.JFrame {
             }
         });
 
-        limpiar1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        limpiar1.setText("AC");
-        limpiar1.addActionListener(new java.awt.event.ActionListener() {
+        limpiar.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        limpiar.setText("AC");
+        limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limpiar1ActionPerformed(evt);
+                limpiarActionPerformed(evt);
             }
         });
 
@@ -269,7 +269,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cuatro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(uno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cambSigno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(negativo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(siete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,16 +306,16 @@ public class InterfazCalculadora extends javax.swing.JFrame {
                                     .addComponent(suma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(38, 38, 38)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(borrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cambiarSigno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(parIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(parDer, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(limpiar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                        .addComponent(limpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1)))
@@ -332,7 +332,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
                     .addComponent(ocho, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nueve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(suma, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cambiarSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -347,15 +347,15 @@ public class InterfazCalculadora extends javax.swing.JFrame {
                     .addComponent(uno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tres, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mult, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(limpiar1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cero, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(punto, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(div, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cambSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(negativo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(igual, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -390,7 +390,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         res.setText(res.getText()+ "8" );
     }//GEN-LAST:event_ochoActionPerformed
 
-    private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
+    private void cambiarSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarSignoActionPerformed
         String aux = res.getText();
         Double tempt;
         try{
@@ -405,7 +405,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         
         
       
-    }//GEN-LAST:event_borrarActionPerformed
+    }//GEN-LAST:event_cambiarSignoActionPerformed
 
     private void cuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuatroActionPerformed
         res.setText(res.getText()+ "4" );
@@ -459,7 +459,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         res.setText(res.getText()+ " / " );
     }//GEN-LAST:event_divActionPerformed
 
-    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
+    private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
         String aux = res.getText();
         PilaADT<Character> pila = new Pila<>();
         StringBuilder cad = new StringBuilder();
@@ -473,7 +473,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         aux = cad.toString();
         
         res.setText(aux);
-    }//GEN-LAST:event_limpiarActionPerformed
+    }//GEN-LAST:event_borrarActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
         String expresion;
@@ -482,13 +482,14 @@ public class InterfazCalculadora extends javax.swing.JFrame {
         res.setText(result);
     }//GEN-LAST:event_igualActionPerformed
 
-    private void cambSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambSignoActionPerformed
+    private void negativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_negativoActionPerformed
         res.setText(res.getText()+"-");
-    }//GEN-LAST:event_cambSignoActionPerformed
+    }//GEN-LAST:event_negativoActionPerformed
 
-    private void limpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiar1ActionPerformed
+    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_limpiar1ActionPerformed
+        res.setText("");
+    }//GEN-LAST:event_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -528,7 +529,7 @@ public class InterfazCalculadora extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton borrar;
-    private javax.swing.JButton cambSigno;
+    private javax.swing.JButton cambiarSigno;
     private javax.swing.JButton cero;
     private javax.swing.JButton cinco;
     private javax.swing.JButton cuatro;
@@ -538,8 +539,8 @@ public class InterfazCalculadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton limpiar;
-    private javax.swing.JButton limpiar1;
     private javax.swing.JButton mult;
+    private javax.swing.JButton negativo;
     private javax.swing.JButton nueve;
     private javax.swing.JButton ocho;
     private javax.swing.JButton parDer;
