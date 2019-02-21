@@ -5,35 +5,35 @@
  */
 package calculadora;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
- * @author sebas
+ * @author fam.zarate
  */
 public class MetodosTest {
     
     public MetodosTest() {
     }
     
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
     
-    @BeforeEach
+    @Before
     public void setUp() {
     }
     
-    @AfterEach
+    @After
     public void tearDown() {
     }
 
@@ -43,12 +43,23 @@ public class MetodosTest {
     @Test
     public void testResultado() {
         System.out.println("resultado");
-        String infija = "(25*14)";
-        String expResult = "350.0";
+        //Primer test
+        String infija = "5 * ( 4 / ( 1 + 1 ) )";
+        String expResult = "10.0";
         String result = Metodos.resultado(infija);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         
+        //Segundo test
+        infija = "8 * ( 7 * ( 1 - 1 ) )";
+        expResult = "0.0";
+        result = Metodos.resultado(infija);
+        assertEquals(expResult, result);
+        
+        //Tercer test
+        infija = "2 / ( 4 - ( 6 + 8 ) )";
+        expResult = "-0.2";
+        result = Metodos.resultado(infija);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -57,12 +68,23 @@ public class MetodosTest {
     @Test
     public void testAPostFija() {
         System.out.println("aPostFija");
-        String infija = "(25*14)";
-        String expResult = "2514*";
+        //Primer test
+        String infija = "5 * ( 4 / ( 1 + 1 ) )";
+        String expResult = "5 4 1 1 + / * ";
         String result = Metodos.aPostFija(infija);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         
+        //Segundo test
+        infija = "8 * ( 7 * ( 1 - 1 ) )";
+        expResult = "8 7 1 1 - * * ";
+        result = Metodos.aPostFija(infija);
+        assertEquals(expResult, result);
+        
+        //Tercer test
+        infija = "2 / ( 4 - ( 6 + 8 ) )";
+        expResult = "2 4 6 8 + - / ";
+        result = Metodos.aPostFija(infija);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -71,12 +93,23 @@ public class MetodosTest {
     @Test
     public void testEvaluarPostFija() {
         System.out.println("evaluarPostFija");
-        String postfija = "2514*";
-        String expResult = "350.0";
+        //Primer test
+        String postfija = "5 4 1 1 + / * ";
+        String expResult = "10.0";
         String result = Metodos.evaluarPostFija(postfija);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         
+        //Segundo test
+        postfija = "8 7 1 1 - * * ";
+        expResult = "0.0";
+        result = Metodos.evaluarPostFija(postfija);
+        assertEquals(expResult, result);
+        
+        //Tercer test
+        postfija = "2 4 6 8 + - / ";
+        expResult = "-0.2";
+        result = Metodos.evaluarPostFija(postfija);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -85,14 +118,29 @@ public class MetodosTest {
     @Test
     public void testEjecutaOperacion() {
         System.out.println("ejecutaOperacion");
-        double op1 = 25.0;
-        double op2 = 14.0;
-        String token = "*";
-        double expResult = 350.0;
+        //Primer test
+        double op1 = 5.0;
+        double op2 = 13.0;
+        String token = "-";
+        double expResult = 8.0;
         double result = Metodos.ejecutaOperacion(op1, op2, token);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
         
+        //Segundo test
+        op1 = 5.0;
+        op2 = 10.0;
+        token = "/";
+        expResult = 2.0;
+        result = Metodos.ejecutaOperacion(op1, op2, token);
+        assertEquals(expResult, result, 0.0);
+        
+        //Tercer test
+        op1 = 6.0;
+        op2 = 7.0;
+        token = "*";
+        expResult = 42.0;
+        result = Metodos.ejecutaOperacion(op1, op2, token);
+        assertEquals(expResult, result, 0.0);
     }
 
     /**
@@ -101,12 +149,23 @@ public class MetodosTest {
     @Test
     public void testPrioridadOperador() {
         System.out.println("prioridadOperador");
-        String caracter = "25";
-        int expResult = 0;
-        int result = Metodos.prioridadOperador(caracter);
+        //Primer test
+        String token = "(";
+        int expResult = 1;
+        int result = Metodos.prioridadOperador(token);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         
+        //Segundo test
+        token = "58.96";
+        expResult = 0;
+        result = Metodos.prioridadOperador(token);
+        assertEquals(expResult, result);
+        
+        //Tercer test
+        token = "*";
+        expResult = 3;
+        result = Metodos.prioridadOperador(token);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -115,12 +174,23 @@ public class MetodosTest {
     @Test
     public void testVerificaParentesis() {
         System.out.println("verificaParentesis");
-        String expresion = "(25*14)";
-        boolean expResult = true;
+        //Primer test
+        String expresion = ")85(";
+        boolean expResult = false;
         boolean result = Metodos.verificaParentesis(expresion);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         
+        //Segundo test
+        expresion = "(8*(5+3))";
+        expResult = true;
+        result = Metodos.verificaParentesis(expresion);
+        assertEquals(expResult, result);
+        
+        //Tercer test
+        expresion = "(85*(-2)";
+        expResult = false;
+        result = Metodos.verificaParentesis(expresion);
+        assertEquals(expResult, result);
     }
     
 }

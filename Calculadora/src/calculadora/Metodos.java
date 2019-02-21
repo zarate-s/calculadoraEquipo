@@ -105,7 +105,9 @@ public class Metodos {
                     pila.push(Double.parseDouble(token));
                 else { //si recibe un operador
                     op1 = pila.pop();
+                    System.out.println("Op1 "+op1);
                     op2 = pila.pop();
+                    System.out.println("Op2 "+op2);
                     res = ejecutaOperacion(op1, op2, token);
                     pila.push(res);
                 }
@@ -133,22 +135,23 @@ public class Metodos {
      * Metodo que calcula resultado de operacion aritmetica 
      * entre dos operandos dado un operador.
      * </pre>
-     * @param op1 Primer operando para ejecutar operacion.
      * @param op2 Segundo operando para ejecutar operacion.
+     * @param op1 Primer operando para ejecutar operacion.
      * @param token Operador usado para operacion.
      * @return Resultado de operacion entre dos operandos de acuerdo a operador.
      */
-    public static double ejecutaOperacion(double op1, double op2, String token) {
+    //Se invierten op1 y op2 para funcionalidad requerida en evaluar postFija
+    public static double ejecutaOperacion(double op2, double op1, String token) {
         Double res = null;
         
         switch (token.charAt(0)) {
-            case '+': res = op2 + op1;
+            case '+': res = op1 + op2;
                       break;
-            case '-': res = op2-op1;
+            case '-': res = op1-op2;
                       break;
-            case '/': res = op2/op1;
+            case '/': res = op1/op2;
                       break;
-            case '*': res = op2*op1;         
+            case '*': res = op1*op2;         
         }
         
         return res;
