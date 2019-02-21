@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author fam.zarate
+ * @author Sebastian Zarate, Rodrigo Gonzalez, Maria Jose Domenzain, Montserrat Olivares
  */
 public class MetodosTest {
     

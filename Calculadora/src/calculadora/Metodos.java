@@ -105,9 +105,7 @@ public class Metodos {
                     pila.push(Double.parseDouble(token));
                 else { //si recibe un operador
                     op1 = pila.pop();
-                    System.out.println("Op1 "+op1);
                     op2 = pila.pop();
-                    System.out.println("Op2 "+op2);
                     res = ejecutaOperacion(op1, op2, token);
                     pila.push(res);
                 }
